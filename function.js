@@ -1,4 +1,4 @@
-const { data } = require("./data");
+const  data  = require("./data");
 
 const teams = [...new Set(data.map((l) => l.Team))];
 

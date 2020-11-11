@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<title>Document</title>
+</head>
+<body>
+
+
+	 <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Team/MEmber</th>
+          <th scope="col">Leads</th>
+          <th scope="col">Cloded Leads</th>
+          <th scope="col">Efficeincy</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+
+		
+		<% k.forEach(currTeam => {   %>
+			<tr>
+				<th><%= Object.keys(currTeam)[0] %></th>
+
+				<th><%= Object.values(currTeam)[0].teamLead %></th>
+				<th><%= Object.values(currTeam)[0].teamClosedLead %></th>
+				<th><%= Object.values(currTeam)[0].eff %></th>
+
+			</tr>
+
+			<% for(var i of Object.values(currTeam)[0]) { %>
+				<tr>
+					<% for(var h = 1; h< Object.values(i).length; h++) { %>
+						<th scope="col"><%=  Object.values(i)[h] %></th>
+					<%	} %>
+				</tr>
+			<%	}}) %>
+
+
+
+	
+</body>
+</html>
